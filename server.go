@@ -10,6 +10,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/kiali/k-charted/config"
+	"github.com/kiali/k-charted/config/promconfig"
 	khttp "github.com/kiali/k-charted/http"
 	"github.com/kiali/k-charted/model"
 	"github.com/prometheus/client_golang/api"
@@ -31,7 +32,9 @@ func (p Pod) GetAnnotations() map[string]string {
 
 var cfg = config.Config{
 	GlobalNamespace: "istio-system",
-	PrometheusURL:   "http://prometheus.istio-system:9090",
+	Prometheus: promconfig.PrometheusConfig{
+		URL: "http://prometheus.istio-system:9090",
+	},
 	Errorf: func(s string, args ...interface{}) {
 		fmt.Printf(s+"\n", args...)
 	},
@@ -48,7 +51,7 @@ type grouped struct {
 }
 
 func searchLabels(w http.ResponseWriter, r *http.Request) {
-	p8s, err := api.NewClient(api.Config{Address: cfg.PrometheusURL})
+	p8s, err := api.NewClient(api.Config{Address: cfg.Prometheus.URL})
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return
@@ -93,7 +96,7 @@ func groupLabelsValues(w http.ResponseWriter, r *http.Request) {
 	rawGroupBy := pathParams["groupBy"]
 	groupBy := append([]string{"namespace"}, strings.Split(rawGroupBy, ",")...)
 
-	p8s, err := api.NewClient(api.Config{Address: cfg.PrometheusURL})
+	p8s, err := api.NewClient(api.Config{Address: cfg.Prometheus.URL})
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return
