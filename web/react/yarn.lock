@@ -1149,6 +1149,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@kiali/k-charted-pf3@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@kiali/k-charted-pf3/-/k-charted-pf3-0.2.0.tgz#38912cced3d8c4fb4406a5c0bc9f12cff9a1926e"
+  integrity sha512-XWxLPq9yualiZ1G1mahanXdvv9WlobKXzRFno+9LEgJ0ECfLSCOs3A0etX5DX6M3oyutfds804+QMHZd7Ad4Bw==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -7297,11 +7302,6 @@ jsx-ast-utils@^2.0.1:
   integrity sha512-yDGDG2DS4JcqhA6blsuYbtsT09xL8AoLuUR2Gb5exrw7UEM19sBcOTq+YBBhrNbl0PUC4R4LnFu+dHg2HKeVvA==
   dependencies:
     array-includes "^3.0.3"
-
-k-charted-react@0.1.0-rc6:
-  version "0.1.0-rc6"
-  resolved "https://registry.yarnpkg.com/k-charted-react/-/k-charted-react-0.1.0-rc6.tgz#d2c33d6c038fc7ce1d36af31e3eff06ac2f9fe67"
-  integrity sha512-UMlYju9uliF6s1Vly9BsAay2qJCLqc9JVt22Zb7XjFXSUWHTIxKt5SdBngQZlxuu2GmvYHumqwUTv5KWzw8q1Q==
 
 keycode@^2.2.0:
   version "2.2.0"

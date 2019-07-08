@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { PF3Dashboard } from 'k-charted-react';
+import { PF3Dashboard } from '@kiali/k-charted-pf3';
 
 class Dashboard extends React.Component {
   constructor() {
